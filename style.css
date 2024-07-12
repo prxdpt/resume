@@ -1,0 +1,432 @@
+/* Reset and general styles */
+body {
+    margin: 0;
+    font-family: 'Chivo Mono', monospace; /* Chivo Mono for everything */
+    background-color: #f8f0e3; /* Light background */
+    color: #382E28; /* Dark font color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #f8f0e3; /* Match the body background */
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
+    margin-bottom: 40px;
+}
+
+#greetings {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em; /* Larger font size */
+    color: #382E28; /* Dark font color */
+    margin-top: 20px; /* Space above greetings */
+    margin-bottom: 40px;
+    transition: opacity 0.5s ease-in-out; /* Adjusting the duration for smooth fade */
+}
+
+/* Example of @font-face rule */
+@font-face {
+    font-family: 'Florence';
+    src: url('fonts/Florence.ttf') format('truetype');
+    /* Add more src lines as needed for different file formats */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lotte Paperfang';
+    src: url('fonts/lottepaperfang.ttf') format('truetype');
+    /* Add more src lines as needed for different file formats */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('fonts/urbanist1.ttf') format('truetype');
+    /* Add more src lines as needed for different file formats */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crush';
+    src: url('fonts/crush.ttf') format('truetype');
+    /* Add more src lines as needed for different file formats */
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Urbanist', sans-serif; /* Use 'Urbanist' font, fallback to sans-serif */
+    font-size: 9em;
+    color: #382E28; /* Dark font color */
+    margin-bottom: 10px;
+    letter-spacing: 7px; /* Increase letter spacing */
+}
+
+header p {
+    font-size: 1.4em;
+    color: #382E28; /* Dark font color */
+    margin-top: 0;
+}
+
+a {
+    color: #2E4C45; /* Button color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 50px;
+    background-color: #f8f0e3; /* Match the body background */
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #2E4C45; /* Button color for headings */
+    margin-bottom: 10px;
+}
+
+.education h2, .work-experience h2 {
+    color: #2E4C45; /* Make the headings button color */
+}
+
+h3 {
+    font-family: 'Chivo Mono', sans-serif;
+    color: #382E28; /* Dark font color */
+    font-size: 1.5em;
+}
+
+h4 {
+    font-family: 'Chivo Mono', sans-serif;
+    color: #382E28; /* Dark font color */
+    font-size: 1em;
+}
+
+p, ul {
+    font-size: 1.1em;
+    line-height: 1.6; /* Improves readability */
+}
+
+li {
+    position: relative;
+}
+
+.details-btn, .utilisation-btn {
+    font-family: 'Chivo Mono', monospace;
+    background-color: #2E4C45; /* Button color */
+    color: #f8f0e3; /* Light background color */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.details-btn:hover, .utilisation-btn:hover {
+    background-color: #78A09C; /* Hover color */
+}
+
+.details-content, .utilisation-content {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #e3dfd9; /* Light background for content */
+    border: 1px solid #382E28; /* Dark font color border */
+    border-radius: 5px;
+    padding-left: 20px; /* Add padding to the left */
+}
+
+.tech-used {
+    margin-top: 10px;
+}
+
+.tech-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Center align images horizontally */
+}
+
+.tech-images img {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Maintain aspect ratio, fit within given dimensions */
+    border-radius: 5px;
+    padding: 5px; /* Add padding around images */
+    background-color: #e3dfd9; /* Background color for padding area */
+    cursor: pointer; /* Indicate that the images are interactive */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.tech-images img:hover {
+    transform: scale(1.2); /* Scale up the image */
+    box-shadow: 0 4px 15px rgba(56, 46, 40, 0.5); /* Add a shadow for the pop-up effect */
+    z-index: 1; /* Ensure the hovered image appears above others */
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f0e3; /* Match the body background */
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  
+  .projects h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #2E4C45; /* Use the main font color */
+    margin-bottom: 20px;
+  }
+  
+  .project-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center align columns */
+  }
+  
+  .project-column {
+    flex: 1;
+    background-color: rgba(56, 46, 40, 0.1); /* Translucent background */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; /* Limit column width for better layout */
+  }
+  
+  .project-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .project-column p {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.2em;
+    color: #382E28; /* Use the main font color */
+    margin-top: 10px;
+  }
+
+  .github-button-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .github-button {
+    background-color: #2E4C45; /* Button color */
+    color: #f8f0e3; /* Light background color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicates clickable element */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .github-button:hover {
+    background-color: #78A09C; /* Hover color */
+  }
+  
+  .project-column a {
+    font-family: 'Chivo Mono', monospace;
+    color: #2E4C45; /* Button color for links */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2E4C45;
+    color: #f8f0e3;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .project-column a:hover {
+    background-color: #78A09C; /* Hover color for links */
+  }
+  
+  .project-column:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 8px 16px rgba(56, 46, 40, 0.2); /* More pronounced shadow on hover */
+  }
+  
+/* New styles for the skills section */
+#show-more-skills {
+    font-family: 'Chivo Mono', monospace;
+    background-color: #2E4C45; /* Button color */
+    color: #f8f0e3; /* Light background color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicates clickable element */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    text-decoration: none; /* Remove underline */
+}
+
+#show-more-skills:hover {
+    background-color: #78A09C; /* Hover color */
+}
+
+#expanded-skills {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #e3dfd9; /* Light background for content */
+    border: 1px solid #382E28; /* Dark font color border */
+    border-radius: 5px;
+    padding-left: 20px; /* Add padding to the left */
+}
+
+/* New styles for the contact section */
+#show-contact {
+    font-family: 'Chivo Mono', monospace;
+    background-color: #2E4C45; /* Button color */
+    color: #f8f0e3; /* Light background color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicates clickable element */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+    margin-top: 10px; /* Add some space above the button */
+}
+
+#show-contact:hover {
+    background-color: #78A09C; /* Hover color */
+}
+
+#contact-info {
+    padding: 10px;
+    margin-top: 10px; /* Add spacing after the button */
+    border: 1px solid #382E28; /* Dark font color border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #e3dfd9;
+    display: none; /* Initially hidden */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #382E28;
+    color: #f8f0e3;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: px;
+  }
+/* Adjust contact links */
+.contact-link {
+    display: inline-flex; /* Display items in a row */
+    align-items: center; /* Center items vertically */
+    margin-right: 20px; /* Adjust spacing between links */
+    color: #382E28; /* Dark font color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Style contact icons */
+.contact-link img {
+    width: 35px; /* Adjust the size of icons */
+    height: 35px;
+    border-radius: 50%; /* Ensure icons are circular */
+    margin-right: 10px; /* Adjust spacing between icon and text */
+    transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
+}
+
+/* Hover effect for contact icons */
+.contact-link:hover img {
+    transform: scale(1.2); /* Scale up on hover */
+}
+/* (Your existing CSS code) */
+
+.social-media {
+    background-color: #f8f0e3; /* Match the body background */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  
+  .social-media h2 {
+    color: #382E28; /* Complementary color */
+    margin-bottom: 20px;
+    display: inline-flex; /* Align icon and text horizontally */
+  }
+  
+  .social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-media-link img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Ensure the image fits within the defined size */
+    transition: transform 0.2s ease;
+    
+  }
+  
+  .social-media-link img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Easter Egg Styles */
+#easter-egg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(56, 46, 40, 0.9); /* Semi-transparent dark background */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000; /* Ensure it appears above other content */
+    display: none; /* Initially hidden */
+    text-align: center;
+}
+
+#easter-egg iframe {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border: none;
+    margin-bottom: 10px;
+}
+
+#easter-egg p {
+    color: #f8f0e3; /* Light font color */
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+
+.hidden {
+    display: none;
+  }
+  
+  #easter-egg {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
