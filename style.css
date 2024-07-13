@@ -376,12 +376,12 @@ footer {
   .social-media-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
   }
   
   .social-media-link img {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: auto;
     object-fit: contain; /* Ensure the image fits within the defined size */
     transition: transform 0.2s ease;
     
