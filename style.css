@@ -430,3 +430,33 @@ footer {
     margin-top: 20px;
   }
   
+
+/* About Me Section */
+.about-me {
+    display: flex;
+    align-items: center; /* Vertically center align */
+    justify-content: space-between; /* Space between text and image */
+    background-color: #f8f0e3; /* Match the body background */
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto; /* Center the section horizontally */
+}
+
+.about-content {
+    flex: 1;
+    margin-right: 20px; /* Space between text and image */
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.6; /* Improves readability */
+    color: #382E28; /* Dark font color */
+}
+
+.about-image img {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 5px; /* Add rounded corners */
+    object-fit: contain; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
+}
