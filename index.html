@@ -3,201 +3,311 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pradipta Roy</title>
+  <title>Pradipta Roy - Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Libre+Bodoni:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&family=Chivo+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Pradipta Roy</h1>
-    <div id="greetings"></div>
-    <div id="easter-egg" class="hidden">
-      <iframe src="https://giphy.com/embed/vnGlErQHuF9BK" width="480" height="341" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
-      <p>awwww! you're so nice</p>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-content">
+      <div class="logo">Pradipta Roy</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <p>I'm a Software Developer at Amdocs R&D, specializing in DevOps with Kubernetes, Groovy, Helm charts, Jenkins Builds, and Java application development for enterprise-level products.</p>
-    <button id="show-contact">Show Contact Info</button>
-    <div id="contact-info" style="display: none;">
-      <p>
-        <a href="https://www.linkedin.com/in/pradiptaa-roy" target="_blank" class="contact-link">
-          <img src="images/linkedin-icon.png" alt="LinkedIn Profile"> Pradipta Roy 
-        </a> 
-        <a href="mailto:thepradipta002@gmail.com" class="contact-link">
-          <img src="images/email-icon.png" alt="Email Address"> Email Address
-        </a> 
-        <a href="tel:8974741749" class="contact-link">
-          <img src="images/phone-icon.png" alt="Phone Number"> 8974741749 
-        </a> 
-        <a href="https://tourism.tripura.gov.in/" target="_blank" class="contact-link">
-          <img src="images/location.png" alt="location"> Agartala,Tripura, India
-        </a>
-      </p>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape">🚀</div>
+      <div class="shape">💻</div>
+      <div class="shape">⚡</div>
     </div>
-  </header>
-  <main>
-    <section class="education">
-      <h2>Education</h2>
-      <h3>Bachelor of Technology, Computer Science and Engineering</h3>
-      <h4> National Institute of Technology, Agartala  (2018-2022)</h4>
-    </section>
-    <section class="work-experience">
-      <h2>Work Experience</h2>
-      <article>
-        <h3>Experienced Software Engineer (DevOps Engineer) </h3>
-        <h4>Amdocs - Pune, India (Jan 2024 - Present)</h4>
-        <section class="tech-used">
-          <h4>Tech Used</h4>
-          <div class="tech-images">
-            <!-- Add images here -->
-            <img src="images\image11.png" alt="Tech 11">
-            <img src="images\image10.png" alt="Tech 10">
-            <img src="images\image14.png" alt="Tech 14">
-            <img src="images\image15.png" alt="Tech 15">                                  
-            <img src="images\image9.png" alt="Tech 9">           
-            <img src="images\image16.png" alt="Tech 16">               
-            <!-- Add more images as needed -->
-          </div>
-        </section>
-        <button class="utilisation-btn" data-target="amdocs-devops-details">How they were utilised</button>
-        <ul id="amdocs-devops-details" class="utilisation-content">
-          <li>Designed and implemented a new microservices architecture with automated deployments using CI/CD pipelines. This improved product performance by 45% and facilitated seamless integration with 3rd party services.</li>
-          <li>Conducted code reviews and provided mentorship to new developers, fostering a culture of continuous learning and best coding practices.</li>
-          <li>Implemented performance optimization strategies, including code refactoring and infrastructure tuning, leading to a 20% reduction in latency and CPU utilization.</li>
-          <li>Led root cause analysis of production performance issues in high-load, distributed cloud environments, resulting in the identification and resolution of critical performance bottlenecks.</li>
-          <li>Engineered and deployed new features to optimize service efficiency during MRs and GAs, resulting in a 30% faster release cycles.</li>
-        </ul>        
-      </article>
-      <article>
-        <h3>Software Engineer (Infra Developer) </h3>
-        <h4>Amdocs - Pune, India (June 2022 - December 2023)</h4>
-        <section class="tech-used">
-          <h4>Tech Used</h4>
-          <div class="tech-images">
-            <!-- Add images here -->
-            <img src="images\image4.png" alt="Tech 4">
-            <img src="images\image1.png" alt="Tech 1">
-            <img src="images\image5.png" alt="Tech 5">
-            <img src="images\image6.png" alt="Tech 6">                                  
-            <img src="images\image2.png" alt="Tech 2">
-            <img src="images\image3.png" alt="Tech 3">                            
-            <!-- Add more images as needed -->
-          </div>
-        </section>
-        <button class="utilisation-btn" data-target="amdocs-details">How they were utilised</button>
-        <ul id="amdocs-details" class="utilisation-content">
-          <li>Reduced system downtime by 17% through proactive monitoring using liveness and readiness probes, ensuring 99.9% system stability. Acquired proficiency in Go lang during the project.</li>
-          <li>Enhanced product capabilities and user satisfaction by introducing new features and supporting backtracking functionalities in ECS assembly.</li>
-          <li>Optimized resource allocation and increased overall system performance by 25% by leading resource profiling efforts and creating 30+ Helm charts for various services.</li>
-          <li>Expedited migration process and improved configuration accuracy by 15% by authoring manifest files (domain and environment descriptors).</li>
-          <li>Contributed to a 20% reduction in deployment time by successfully migrating the Evolved Charging Suite (ECS) to Amdocs CI/CD platform MPDK, implementing pipelines in Jenkins, and establishing repositories for 4 projects.</li>
-        </ul>
-      </article>
-      <article>
-        <h3>Winter Trainee </h3>
-        <h4>Ritusha Consultant Private Ltd. - Bhubaneswar, Odisha (December 2019 - Jan 2020)</h4>
-        <section class="tech-used">
-          <h4>Tech Used</h4>
-          <div class="tech-images">
-            <!-- Add images here -->
-            <img src="images\image7.png" alt="Tech 7">           
-            <img src="images\image8.png" alt="Tech 8">  
-            <img src="images\image12.png" alt="Tech 12">   
-            <img src="images\image13.png" alt="Tech 13">                        
-            <!-- Add more images as needed -->
-          </div>
-        </section>
-        <button class="utilisation-btn" data-target="ritusha-details">How they were utilised</button>
-        <ul id="ritusha-details" class="utilisation-content">
-          <li>Successfully developed a game incorporating pathfinding visualization tools using Python and related libraries in collaboration with a team of 5+ students.</li>
-          <li>Demonstrated strong knowledge and skills in Microsoft technologies by achieving an impressive 88% score in the Microsoft Technology Associate (MTA) certification exam.</li>
-        </ul>
-      </article>
-    </section>
-<!-- New Projects Section -->
-<section class="projects">
-  <h2>Projects</h2>
-  <div class="project-columns">
-    <div class="project-column">
-      <img src="images/project1.png" alt="Project 1">
-      <p>A Crypto Coin Wallet </p>
-      <a href="https://github.com/pradipta/project1" target="_blank">View on GitHub</a>
+    <div class="hero-content">
+      <div class="greeting" id="greeting">Hello!</div>
+      <h1 class="hero-title">Pradipta Roy</h1>
+      <p class="hero-subtitle">DevOps Engineer specialising in Platform Engineering, Infrastructure Automation, and Cloud Technologies with expertise in AWS, Kubernetes, Terraform driving scalable infrastructure and microservices deployments</p>
+      <a href="#contact" class="cta-button">
+        Get In Touch
+        <span>→</span>
+      </a>
     </div>
-    <div class="project-column">
-      <img src="images/project2.png" alt="Project 2">
-      <p>Flight Delay Prediction</p>
-      <a href="https://github.com/pradipta/project2" target="_blank">View on GitHub</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="section fade-in" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Hi, I'm Pradipta, your friendly neighbourhood software engineer based in Pune, India. A Software Engineer on weekdays and a rider and gamer on weekends.</p>
+        <br>
+        <p>Oh, and there's also a dusty guitar in the corner that I occasionally attempt to serenade the neighbours with (with mixed results, I might add). I also know Spanish, French, Hindi and Bengali, and learning German now.</p>
+        <br>
+        <p>So, if you've got a coding project that needs a hero, some constructive criticism for a fellow adventurer, or just fancy a chat about the latest game (or just about anything), don't be shy – hit me up. Cheers ✌︎</p>
+      </div>
+      <div class="about-image">
+        <img src="images/me.jpg" alt="Pradipta Roy" />
+      </div>
     </div>
-    <div class="project-column">
-      <img src="images/project3.png" alt="Project 3">
-      <p>House Price Sentiment </p>
-      <a href="https://github.com/pradipta/project3" target="_blank">View on GitHub</a>
-    </div>
-    <div class="github-button-container">
-      <a href="https://github.com/pradipta" target="_blank" class="github-button">See My Other Projects</a>
-    </div>
+  </section>
+
+
+<!-- Tech Stack Section -->
+<section class="section fade-in" id="techstack">
+  <h2 class="section-title">Tech Stack</h2>
+  <div class="tech-grid">
+
+    <!-- Programming -->
+    <a href="https://www.python.org/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+      <span>Python</span>
+    </a>
+    <a href="https://go.dev/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/go/00ADD8" alt="GoLang">
+      <span>GoLang</span>
+    </a>
+    <a href="https://groovy-lang.org/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/apachegroovy/4298B8" alt="Groovy">
+      <span>Groovy</span>
+    </a>
+
+    <!-- Cloud & Infra -->
+    <a href="https://aws.amazon.com/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/amazonaws/232F3E" alt="AWS">
+      <span>AWS</span>
+    </a>
+    <a href="https://www.terraform.io/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/terraform/7B42BC" alt="Terraform">
+      <span>Terraform</span>
+    </a>
+    <a href="https://www.ansible.com/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/ansible/EE0000" alt="Ansible">
+      <span>Ansible</span>
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="IaC">
+      <span>IaC</span>
+    </a>
+
+    <!-- Containers -->
+    <a href="https://www.docker.com/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker">
+      <span>Docker</span>
+    </a>
+    <a href="https://kubernetes.io/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes">
+      <span>Kubernetes</span>
+    </a>
+    <a href="https://helm.sh/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/helm/0F1689" alt="Helm">
+      <span>Helm</span>
+    </a>
+
+    <!-- CI/CD & Version Control -->
+    <a href="https://www.jenkins.io/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/jenkins/D24939" alt="Jenkins">
+      <span>Jenkins</span>
+    </a>
+    <a href="https://bitbucket.org/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/bitbucket/0052CC" alt="Bitbucket">
+      <span>Bitbucket</span>
+    </a>
+    <a href="https://git-scm.com/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/git/F05032" alt="Git">
+      <span>Git</span>
+    </a>
+    <a href="https://www.atlassian.com/software/jira" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira">
+      <span>Jira</span>
+    </a>
+
+    <!-- Monitoring & Logging -->
+    <a href="https://prometheus.io/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/prometheus/E6522C" alt="Prometheus">
+      <span>Prometheus</span>
+    </a>
+    <a href="https://grafana.com/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/grafana/F46800" alt="Grafana">
+      <span>Grafana</span>
+    </a>
+    <a href="https://www.elastic.co/what-is/elk-stack" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="ELK Stack">
+      <span>ELK Stack</span>
+    </a>
+    <a href="https://grafana.com/oss/loki/" target="_blank" class="tech-item">
+      <img src="https://cdn.simpleicons.org/loki/0C1017" alt="Loki">
+      <span>Loki</span>
+    </a>
+
   </div>
 </section>
-    <section class="skills">
-      <h2>About Me</h2>
-      <p></p>
-      <!-- Social Media Section -->
 
 
-        <!-- About Me Section -->
-        <section class="about-me">
-          <div class="about-content">
-              <p>
-                Hi , I am Pradipta your friendly neighbourhood software engineer. I am based in Pune , India. A Software Engineer on weekdays and a rider and gamer on weekends .
+  <!-- Experience Section -->
+  <section class="section fade-in" id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="experience-grid">
 
-                Oh, and there's also a dusty guitar in the corner that I occasionally attempt to serenade the neighbours with –- (with mixed results, I might add). I also know Spanish, French, Hindi and Bengali , and learning German now. 
-              
-              </p>
-              <p>
-                So, if you've got a coding project that needs a hero, some constructive criticism for a fellow adventurer, or just fancy a chat about the latest game (or just about anything), don't be shy – hit me up on any of the apps below. Cheers ✌︎︎
-              </p>
+      <div class="experience-card">
+        <div class="experience-header">
+          <div>
+            <div class="experience-company">Amdocs</div>
+            <div class="experience-title">Experienced Software Engineer (DevOps)</div>
           </div>
-          <div class="about-image">
-              <img src="images\me.jpg" alt="About Me Image">
+          <div class="experience-period">Jan 2024 - Present</div>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Groovy</span>
+          <span class="tech-tag">Helm</span>
+          <span class="tech-tag">Jenkins</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Docker</span>
+        </div>
+        <ul class="experience-list">
+          <li>Designed and implemented microservices architecture with automated CI/CD pipelines, improving performance by 45%</li>
+          <li>Conducted code reviews and mentored new developers, fostering continuous learning culture</li>
+          <li>Implemented performance optimization strategies, reducing latency and CPU utilization by 20%</li>
+          <li>Led root cause analysis in high-load distributed cloud environments</li>
+          <li>Engineered new features optimizing service efficiency, resulting in 30% faster release cycles</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="experience-header">
+          <div>
+            <div class="experience-company">Amdocs</div>
+            <div class="experience-title">Software Engineer (Infra Developer)</div>
           </div>
-      </section>
-      <section class="social-media">
-        <div class="social-media-links">
-          <a href="https://twitter.com/prxdpt" target="_blank" class="social-media-link">
-            <img src="images/twitter-icon.png" alt="Twitter Profile">prxdpt
-          </a>
-          <a href="https://instagram.com/prxdpt" target="_blank" class="social-media-link">
-            <img src="images/instagram-icon.png" alt="Instagram Profile">prxdpt
-          </a>
-          <a href="https://youtube.com/yourusername" target="_blank" class="social-media-link">
-            <img src="images/youtube-icon.png" alt="YouTube Profile"> No videos yet :(
+          <div class="experience-period">June 2022 - Dec 2023</div>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Go</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Linux</span>
+          <span class="tech-tag">Bash</span>
+          <span class="tech-tag">Git</span>
+        </div>
+        <ul class="experience-list">
+          <li>Reduced system downtime by 17% through proactive monitoring with liveness and readiness probes</li>
+          <li>Enhanced product capabilities by introducing new features and backtracking functionalities</li>
+          <li>Optimized resource allocation and increased system performance by 25% through resource profiling</li>
+          <li>Created 30+ Helm charts for various services, improving deployment efficiency</li>
+          <li>Successfully migrated ECS to Amdocs CI/CD platform, reducing deployment time by 20%</li>
+        </ul>
+      </div>
+
+      <div class="experience-card">
+        <div class="experience-header">
+          <div>
+            <div class="experience-company">Ritusha Consultant Pvt Ltd</div>
+            <div class="experience-title">Winter Trainee</div>
+          </div>
+          <div class="experience-period">Dec 2019 - Jan 2020</div>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Pygame</span>
+          <span class="tech-tag">Algorithms</span>
+          <span class="tech-tag">Microsoft Tech</span>
+        </div>
+        <ul class="experience-list">
+          <li>Developed a game with pathfinding visualization tools using Python and related libraries</li>
+          <li>Achieved 88% score in Microsoft Technology Associate (MTA) certification exam</li>
+          <li>Collaborated with a team of 5+ students on the project development</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section fade-in" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">₿</div>
+        <div class="project-content">
+          <h3 class="project-title">Crypto Coin Wallet</h3>
+          <p class="project-description">A secure cryptocurrency wallet application with portfolio tracking and trading capabilities.</p>
+          <a href="#" class="project-link">
+            View Project →
           </a>
         </div>
-      </section>
-      
-        <button id="show-more-skills"> Additional skills</button>
-        <ul id="expanded-skills" class="additional-skills" style="display: none;">
-          <li>Version Control Systems (Git, SVN)</li>
-          <li>CI/CD Pipelines</li>
-          <li>Virtualization (Docker, Vagrant)</li>
-          <li>Container Orchestration (Kubernetes)</li>
-          <li>Configuration Management (Ansible, Puppet)</li>
-          <li>Monitoring and Logging (Prometheus, Grafana, ELK Stack)</li>
-          <li>Infrastructure as Code (Terraform, CloudFormation)</li>
-          <li>Scripting (Python, Bash)</li>
-          <li>Web Development</li>
-          <li>Machine Learning</li>
-          <li>Cloud Computing (AWS)</li>
-          <li>SQL and NoSQL Databases</li>
-          <!-- Add more expanded skills as needed -->
-        </ul>
-    </section>
-  </main>
-  <!-- Easter Egg Content -->
+      </div>
 
-  <footer>
-    <p>&copy;2024 Pradipta Roy</p>
+      <div class="project-card">
+        <div class="project-image">✈️</div>
+        <div class="project-content">
+          <h3 class="project-title">Flight Delay Prediction</h3>
+          <p class="project-description">Machine learning model to predict flight delays using historical data and weather patterns.</p>
+          <a href="#" class="project-link">
+            View Project →
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">🏠</div>
+        <div class="project-content">
+          <h3 class="project-title">House Price Sentiment</h3>
+          <p class="project-description">Real estate price analysis tool combining market data with sentiment analysis from social media.</p>
+          <a href="#" class="project-link">
+            View Project →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section fade-in" id="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <h3>Email</h3>
+        <p>thepradipta002@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💼</div>
+        <h3>LinkedIn</h3>
+        <p>pradiptaa-roy</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <h3>Phone</h3>
+        <p>8974741749</p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <h3>Location</h3>
+        <p>Agartala, Tripura, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Pradipta Roy. All rights reserved.</p>
   </footer>
 
+  <!-- Easter Egg -->
+  <div class="easter-egg" id="easterEgg">
+    <iframe src="https://giphy.com/embed/vnGlErQHuF9BK" width="300" height="213" frameborder="0" allowfullscreen></iframe>
+    <p style="margin-top: 1rem;">awwww! you're so nice ✨</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,462 +1,544 @@
-/* Reset and general styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --border: #27272a;
+  --gradient-start: #3b82f6;
+  --gradient-end: #8b5cf6;
+}
+
+h1, h2, h3, .logo, .section-title, .experience-company, .experience-title {
+  font-family: 'Libre Bodoni', serif;
+}
+
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+}
+
+.logo {
+  font-family: 'Unbounded', sans-serif;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.tech-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.tech-item span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.tech-item:hover img {
+  transform: scale(1.2);
+}
+
+.tech-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 body {
-    margin: 0;
-    font-family: 'Chivo Mono', monospace; /* Chivo Mono for everything */
-    background-color: #f8f0e3; /* Light background */
-    color: #382E28; /* Dark font color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header {
-    background-color: #f8f0e3; /* Match the body background */
-    padding: 20px;
-    text-align: center;
-    width: 80%;
-    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
-    margin-bottom: 40px;
-}
-
-#greetings {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2em; /* Larger font size */
-    color: #382E28; /* Dark font color */
-    margin-top: 20px; /* Space above greetings */
-    margin-bottom: 40px;
-    transition: opacity 0.5s ease-in-out; /* Adjusting the duration for smooth fade */
-}
-
-/* Example of @font-face rule */
-@font-face {
-    font-family: 'Florence';
-    src: url('fonts/Florence.ttf') format('truetype');
-    /* Add more src lines as needed for different file formats */
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Lotte Paperfang';
-    src: url('fonts/lottepaperfang.ttf') format('truetype');
-    /* Add more src lines as needed for different file formats */
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Urbanist';
-    src: url('fonts/urbanist1.ttf') format('truetype');
-    /* Add more src lines as needed for different file formats */
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Crush';
-    src: url('fonts/crush.ttf') format('truetype');
-    /* Add more src lines as needed for different file formats */
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'Urbanist', sans-serif; /* Use 'Urbanist' font, fallback to sans-serif */
-    font-size: 9em;
-    color: #382E28; /* Dark font color */
-    margin-bottom: 10px;
-    letter-spacing: 7px; /* Increase letter spacing */
-}
-
-header p {
-    font-size: 1.4em;
-    color: #382E28; /* Dark font color */
-    margin-top: 0;
-}
-
-a {
-    color: #2E4C45; /* Button color for links */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 50px;
-    background-color: #f8f0e3; /* Match the body background */
-    width: 80%;
-    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
-    margin-bottom: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2em;
-    color: #2E4C45; /* Button color for headings */
-    margin-bottom: 10px;
-}
-
-.education h2, .work-experience h2 {
-    color: #2E4C45; /* Make the headings button color */
-}
-
-h3 {
-    font-family: 'Chivo Mono', sans-serif;
-    color: #382E28; /* Dark font color */
-    font-size: 1.5em;
-}
-
-h4 {
-    font-family: 'Chivo Mono', sans-serif;
-    color: #382E28; /* Dark font color */
-    font-size: 1em;
-}
-
-p, ul {
-    font-size: 1.1em;
-    line-height: 1.6; /* Improves readability */
-}
-
-li {
-    position: relative;
-}
-
-.details-btn, .utilisation-btn {
-    font-family: 'Chivo Mono', monospace;
-    background-color: #2E4C45; /* Button color */
-    color: #f8f0e3; /* Light background color */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-    margin-top: 5px;
-    transition: background-color 0.2s ease; /* Smooth hover effect */
-}
-
-.details-btn:hover, .utilisation-btn:hover {
-    background-color: #78A09C; /* Hover color */
-}
-
-.details-content, .utilisation-content {
-    display: none;
-    margin-top: 5px;
-    padding: 10px;
-    background-color: #e3dfd9; /* Light background for content */
-    border: 1px solid #382E28; /* Dark font color border */
-    border-radius: 5px;
-    padding-left: 20px; /* Add padding to the left */
-}
-
-.tech-used {
-    margin-top: 10px;
-}
-
-.tech-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center; /* Center align images horizontally */
-}
-
-.tech-images img {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    object-fit: contain; /* Maintain aspect ratio, fit within given dimensions */
-    border-radius: 5px;
-    padding: 5px; /* Add padding around images */
-    background-color: #e3dfd9; /* Background color for padding area */
-    cursor: pointer; /* Indicate that the images are interactive */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
-}
-
-.tech-images img:hover {
-    transform: scale(1.2); /* Scale up the image */
-    box-shadow: 0 4px 15px rgba(56, 46, 40, 0.5); /* Add a shadow for the pop-up effect */
-    z-index: 1; /* Ensure the hovered image appears above others */
-}
-
-/* Projects Section */
-.projects {
-    display: flex;
-    flex-direction: column;
-    background-color: #f8f0e3; /* Match the body background */
-    width: 80%;
-    margin-bottom: 20px;
-  }
-  
-  .projects h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2em;
-    color: #2E4C45; /* Use the main font color */
-    margin-bottom: 20px;
-  }
-  
-  .project-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* Center align columns */
-  }
-  
-  .project-column {
-    flex: 1;
-    background-color: rgba(56, 46, 40, 0.1); /* Translucent background */
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 300px; /* Limit column width for better layout */
-  }
-  
-  .project-column img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .project-column p {
-    font-family: 'Chivo Mono', monospace;
-    font-size: 1.2em;
-    color: #382E28; /* Use the main font color */
-    margin-top: 10px;
-  }
-
-  .github-button-container {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .github-button {
-    background-color: #2E4C45; /* Button color */
-    color: #f8f0e3; /* Light background color */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Indicates clickable element */
-    transition: background-color 0.2s ease; /* Smooth hover effect */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .github-button:hover {
-    background-color: #78A09C; /* Hover color */
-  }
-  
-  .project-column a {
-    font-family: 'Chivo Mono', monospace;
-    color: #2E4C45; /* Button color for links */
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #2E4C45;
-    color: #f8f0e3;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .project-column a:hover {
-    background-color: #78A09C; /* Hover color for links */
-  }
-  
-  .project-column:hover {
-    transform: scale(1.05); /* Scale up slightly on hover */
-    box-shadow: 0 8px 16px rgba(56, 46, 40, 0.2); /* More pronounced shadow on hover */
-  }
-  
-/* New styles for the skills section */
-#show-more-skills {
-    font-family: 'Chivo Mono', monospace;
-    background-color: #2E4C45; /* Button color */
-    color: #f8f0e3; /* Light background color */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Indicates clickable element */
-    transition: background-color 0.2s ease; /* Smooth hover effect */
-    text-decoration: none; /* Remove underline */
-}
-
-#show-more-skills:hover {
-    background-color: #78A09C; /* Hover color */
-}
-
-#expanded-skills {
-    display: none;
-    margin-top: 5px;
-    padding: 10px;
-    background-color: #e3dfd9; /* Light background for content */
-    border: 1px solid #382E28; /* Dark font color border */
-    border-radius: 5px;
-    padding-left: 20px; /* Add padding to the left */
-}
-
-/* New styles for the contact section */
-#show-contact {
-    font-family: 'Chivo Mono', monospace;
-    background-color: #2E4C45; /* Button color */
-    color: #f8f0e3; /* Light background color */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Indicates clickable element */
-    transition: background-color 0.2s ease; /* Smooth hover effect */
-    margin-top: 10px; /* Add some space above the button */
-}
-
-#show-contact:hover {
-    background-color: #78A09C; /* Hover color */
-}
-
-#contact-info {
-    padding: 10px;
-    margin-top: 10px; /* Add spacing after the button */
-    border: 1px solid #382E28; /* Dark font color border */
-    border-radius: 5px; /* Add rounded corners */
-    background-color: #e3dfd9;
-    display: none; /* Initially hidden */
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 1px;
-    background-color: #382E28;
-    color: #f8f0e3;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: px;
-  }
-/* Adjust contact links */
-.contact-link {
-    display: inline-flex; /* Display items in a row */
-    align-items: center; /* Center items vertically */
-    margin-right: 20px; /* Adjust spacing between links */
-    color: #382E28; /* Dark font color */
-    text-decoration: none; /* Remove underline from links */
-}
-
-/* Style contact icons */
-.contact-link img {
-    width: 35px; /* Adjust the size of icons */
-    height: 35px;
-    border-radius: 50%; /* Ensure icons are circular */
-    margin-right: 10px; /* Adjust spacing between icon and text */
-    transition: transform 0.2s ease-in-out; /* Smooth scaling effect */
-}
-
-/* Hover effect for contact icons */
-.contact-link:hover img {
-    transform: scale(1.2); /* Scale up on hover */
-}
-/* (Your existing CSS code) */
-
-.social-media {
-    background-color: #f8f0e3; /* Match the body background */
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
-  }
-  
-  .social-media h2 {
-    color: #382E28; /* Complementary color */
-    margin-bottom: 20px;
-    display: inline-flex; /* Align icon and text horizontally */
-  }
-  
-  .social-media-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .social-media-link img {
-    width: 24px;
-    height: auto;
-    object-fit: contain; /* Ensure the image fits within the defined size */
-    transition: transform 0.2s ease;
-    
-  }
-  
-  .social-media-link img:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Easter Egg Styles */
-#easter-egg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(56, 46, 40, 0.9); /* Semi-transparent dark background */
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000; /* Ensure it appears above other content */
-    display: none; /* Initially hidden */
-    text-align: center;
-}
-
-#easter-egg iframe {
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    border: none;
-    margin-bottom: 10px;
-}
-
-#easter-egg p {
-    color: #f8f0e3; /* Light font color */
-    font-family: 'Chivo Mono', monospace;
-    font-size: 1.5em;
-    margin-top: 0;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 
-.hidden {
-    display: none;
-  }
-  
-  #easter-egg {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-
-/* About Me Section */
-.about-me {
-    display: flex;
-    align-items: center; /* Vertically center align */
-    justify-content: space-between; /* Space between text and image */
-    background-color: #f8f0e3; /* Match the body background */
-    width: 80%;
-    padding: 20px;
-    margin: 20px auto; /* Center the section horizontally */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
 }
 
-.about-content {
-    flex: 1;
-    margin-right: 20px; /* Space between text and image */
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-.about-content p {
-    font-size: 1.1em;
-    line-height: 1.6; /* Improves readability */
-    color: #382E28; /* Dark font color */
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+.greeting {
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.4s forwards;
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
 }
 
+/* Floating Elements */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+.shape:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.shape:nth-child(2) {
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+.shape:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.about-text {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.about-image {
+  position: relative;
+}
 .about-image img {
-    width: 150px; /* Adjust the size as needed */
-    height: auto;
-    border-radius: 5px; /* Add rounded corners */
-    object-fit: contain; /* Maintain aspect ratio */
-    box-shadow: 0 4px 8px rgba(56, 46, 40, 0.1); /* Subtle shadow */
+  width: 100%;
+  border-radius: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.about-image:hover img {
+  filter: grayscale(0%);
+}
+
+/* Experience Cards */
+.experience-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.experience-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.experience-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.experience-company {
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.experience-period {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+.experience-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+.experience-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.project-image {
+  height: 200px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+.project-content {
+  padding: 1.5rem;
+}
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.project-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.contact-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  margin-top: 5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Easter Egg */
+.easter-egg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.easter-egg.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
 }
