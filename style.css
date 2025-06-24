@@ -81,6 +81,27 @@ h1, h2, h3, .logo, .section-title, .experience-company, .experience-title {
   gap: 0.5rem;
 }
 
+/* Default .tech-tag stays unchanged for Experience, etc. */
+
+/* Enlarged tech tags inside Tech Stack section only */
+#techstack .tech-tag {
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+
+.tech-tag-link {
+  text-decoration: none;
+}
+
+.tech-tag-link:hover .tech-tag {
+  background-color: rgba(59, 130, 246, 0.2); /* subtle hover */
+  border-color: var(--accent);
+}
+
+
 body {
   font-family: 'JetBrains Mono', monospace;
   background: var(--bg-primary);
