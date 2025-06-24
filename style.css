@@ -65,6 +65,21 @@ h1, h2, h3, .logo, .section-title, .experience-company, .experience-title {
   transform: translateY(0);
 }
 
+.techstack-category {
+  margin-bottom: 2rem;
+}
+
+.techstack-category h3 {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.tech-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
 body {
   font-family: 'JetBrains Mono', monospace;
